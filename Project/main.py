@@ -5,7 +5,6 @@ from PIL import Image, ImageTk
 import cv2
 import numpy as np
 import os
-from PIL import Image
 from image_processor import ImageProcessor
 from augmentator import Augmentator
 import shutil
