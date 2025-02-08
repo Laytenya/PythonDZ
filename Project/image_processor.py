@@ -7,7 +7,6 @@ class ImageProcessor:
 
     @staticmethod
     def additive_noise(image, percent):
-        ### Вариант 1,5
         return np.clip(np.where(np.random.rand(*image.shape) < percent / 100,
                         image + np.random.randint(-20, 20, image.shape), image), 0, 255)
 
@@ -88,4 +87,12 @@ class ImageProcessor:
         T = np.zeros((n, n))
         np.fill_diagonal(T, 1 / n)
         return cv2.filter2D(image, -1, T)
+
+   @staticmethod
+   def crop_image(image, left, top, right, bottom):
+       try:
+        img = Image.open(image)
+        cropped_img = img.crop((left, top, right, bottom))
+           
+       
 
