@@ -93,6 +93,17 @@ class ImageProcessor:
        try:
         img = Image.open(image)
         cropped_img = img.crop((left, top, right, bottom))
+        cropped_image_path = "cropped_image.jpg" 
+        cropped_img.save(cropped_image_path)
+        print(f"Обрезанное изображение сохранено в: {cropped_image_path}")
+        return cropped_image_path
+
+       except FileNotFoundError:
+        print(f"Ошибка: Файл изображения не найден: {image_path}")
+        return None
+       except Exception as e:
+        print(f"Произошла ошибка: {e}")
+        return None
            
        
 
