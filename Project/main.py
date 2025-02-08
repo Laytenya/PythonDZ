@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 import cv2
 import numpy as np
 import os
+from PIL import Image
 from image_processor import ImageProcessor
 from augmentator import Augmentator
 import shutil
@@ -23,6 +24,7 @@ ROTATION = "Поворот"
 GLASS_EFFECT = "Эффект стекла"
 WAVES = "Волны"
 MOTION_BLUR = "Блюр"
+CROPS = "Обрезка"
 
 
 def set_image_to_label(label, image, zoom=1):
